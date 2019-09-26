@@ -1,4 +1,3 @@
-//Luciano Gabriel de Araujo N.USP:10716783
 #ifndef EXPRESSION_H
 #define EXPRESSION_H
 
