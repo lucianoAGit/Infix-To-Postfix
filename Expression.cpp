@@ -1,4 +1,3 @@
-// LUCIANO GABRIEL DE ARAUJO NUMERO USP: 10716783
 #include "Expression.h"
 #include <string>
 #include "StackTemplate.h"
@@ -36,9 +35,9 @@ string Expression::getPostfix()
 int Expression::getValue()
 {  return value;
 }
-//prÈ: Nenhuma.
+//pr√©: Nenhuma.
 //pos: Retorna o peso do operador.
-//FunÁ„o respons·vel por dar um "peso" aos operadores, para que seja possÌvel organizar a precedencia.
+//Fun√ß√£o respons√°vel por dar um "peso" aos operadores, para que seja poss√≠vel organizar a precedencia.
 int precedencia(char op){ 
     
 	int peso; 
@@ -57,7 +56,7 @@ int precedencia(char op){
 		case '^':
 				peso = 3;
 				break;
-		case '(': //Menor prioridade pois deve ser excluido da notaÁ„o POSFIXADA.
+		case '(': //Menor prioridade pois deve ser excluido da nota√ß√£o POSFIXADA.
 				peso = -2;
 				break;
 		default:
@@ -79,18 +78,18 @@ void Expression::infixToPostfix()
  
  tam_infix = infix.length();  
 
-//LaÁo externo respons·vel por percorrer toda a string.
+//La√ßo externo respons√°vel por percorrer toda a string.
 	for(i=0;i<tam_infix;i++){ 
 			
 			aux_infix = getInfix().at(i); //Encapsulamento.		
 				
 				if (isalpha(aux_infix)){
-						cout<<"Entre com uma express„o Infixa valida, por favor."<<endl;
+						cout<<"Entre com uma express√£o Infixa valida, por favor."<<endl;
 						abort();
 				}
-				 if(aux_infix != ' '){ //Caso a string tenha um espaÁo, o programa desconsidera.
+				 if(aux_infix != ' '){ //Caso a string tenha um espa√ßo, o programa desconsidera.
 					            	
-					if (isdigit(aux_infix)) // Verifica se È um n˙mero, e se for coloca em POSTFIX.
+					if (isdigit(aux_infix)) // Verifica se √© um n√∫mero, e se for coloca em POSTFIX.
 			 			temp_post+= aux_infix;
 			 
 			 		else if (aux_infix == '(')			 
@@ -101,7 +100,7 @@ void Expression::infixToPostfix()
 							if(!s.empty())
 							s.getTop(aux_top); 				
 						
-							while(!s.empty() && aux_top!=  '(') { //LaÁo interno que coloca os elementos em POSTFIX, enquanto o topo n„o for ( E a pilha n„o esteja vazia.
+							while(!s.empty() && aux_top!=  '(') { //La√ßo interno que coloca os elementos em POSTFIX, enquanto o topo n√£o for ( E a pilha n√£o esteja vazia.
 									temp_post+= aux_top;
 									s.pop(aux_pop);				
 									if(!s.empty())
@@ -110,7 +109,7 @@ void Expression::infixToPostfix()
 								if(!s.empty()) 
 								s.pop(aux_pop);
 								}
-   			 		else { //Se n„o for um parenteses, nem um n˙mero, È um operador.					
+   			 		else { //Se n√£o for um parenteses, nem um n√∫mero, √© um operador.					
 							
 							if(s.empty())
 								aux_top = 0;
@@ -118,7 +117,7 @@ void Expression::infixToPostfix()
 							else if(!s.empty()){
 								s.getTop(aux_top);
 																	
-								while(!s.empty() && precedencia(aux_infix) <= precedencia(aux_top)){ //LaÁo interno que organiza os operadores em POSTFIX, de acordo com a sua precedencia.						
+								while(!s.empty() && precedencia(aux_infix) <= precedencia(aux_top)){ //La√ßo interno que organiza os operadores em POSTFIX, de acordo com a sua precedencia.						
 										temp_post+= aux_top;
 										s.pop(aux_pop);							
 										if(!s.empty())
@@ -132,7 +131,7 @@ void Expression::infixToPostfix()
 				}
 
 	}
-//LaÁo respons·vel por retirar todos os elementos restantes da pilha e colocar em POSTFIX.
+//La√ßo respons√°vel por retirar todos os elementos restantes da pilha e colocar em POSTFIX.
    	
 	while(!s.empty()){	
         s.pop(aux_pop);
@@ -159,11 +158,11 @@ tam_postfix = postfix.length();
 				value = 0;
 		
 
-//LaÁo externo que percorre toda a string POSTFIX.	
+//La√ßo externo que percorre toda a string POSTFIX.	
 	for(i=0;i<tam_postfix;i++){
 		
 		if (isdigit(postfix[i])){ 
-				x = postfix[i] - '0'; //Faz a convers„o de um char para Int, necess·rio para dar PUSH na pilha de inteiros e realizar os calculos.
+				x = postfix[i] - '0'; //Faz a convers√£o de um char para Int, necess√°rio para dar PUSH na pilha de inteiros e realizar os calculos.
 				s.push(x);
 				if(tam_postfix == 1){
 						s.pop(valor_1);
@@ -173,7 +172,7 @@ tam_postfix = postfix.length();
 		 
 		 if(tam_postfix > 1 ){
 								
-			switch (postfix[i]){ //Comando switch verifica qual operaÁ„o È necess·ria e retorna o valor em OP e coloca OP na pilha, para a prÛxima operaÁ„o.
+			switch (postfix[i]){ //Comando switch verifica qual opera√ß√£o √© necess√°ria e retorna o valor em OP e coloca OP na pilha, para a pr√≥xima opera√ß√£o.
 	       		    
 				case '+':
 	           			s.pop(valor_1);
@@ -240,7 +239,7 @@ tam_postfix = postfix.length();
 		}
 	
 	}
-	if(!s.empty()) //Se a pilha n„o for vazia, retorna o valor do topo, que contÈm a resposta das operaÁıes.
+	if(!s.empty()) //Se a pilha n√£o for vazia, retorna o valor do topo, que cont√©m a resposta das opera√ß√µes.
 		s.getTop(value);
 
 }
