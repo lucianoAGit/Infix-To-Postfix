@@ -1,7 +1,7 @@
 /*
  * StackTemplate.h
  */
-//Luciano Gabriel de Araujo N.USP:10716783
+
 #ifndef STACKTEMPLATE_H
 #define STACKTEMPLATE_H
 
@@ -55,7 +55,7 @@ bool Stack<StackEntry>::full()
 template< class StackEntry >
 void Stack<StackEntry>::push(StackEntry x)
 // pre-condicao: Pilha S ja tenha sido criada
-// pos-condicao: O item x È armazenado no topo da pilha
+// pos-condicao: O item x √© armazenado no topo da pilha
 {
   if (full())
   { cout << "Pilha Cheia" << endl;
@@ -67,7 +67,7 @@ void Stack<StackEntry>::push(StackEntry x)
 
 template< class StackEntry >
 void Stack<StackEntry>::pop(StackEntry &x)
-// pre-condicao: Pilha ja tenha sido criada e n„o esta vazia
+// pre-condicao: Pilha ja tenha sido criada e n√£o esta vazia
 // pos-condicao: O item no topo da pilha eh removido e seu valor retornado na variavel x
 {
   if (empty())
@@ -80,7 +80,7 @@ void Stack<StackEntry>::pop(StackEntry &x)
 
 template< class StackEntry >
 void Stack<StackEntry>::getTop(StackEntry &x)
-// pre-condicao: Pilha ja tenha sido criada e n„o esta vazia
+// pre-condicao: Pilha ja tenha sido criada e n√£o esta vazia
 // pos-condicao: O item no topo da pilha eh retornado na variavel x; pilha permanece inalterada
 {
   if (empty())
