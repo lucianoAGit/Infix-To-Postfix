@@ -1,3 +1,1 @@
-Esse trabalho tem como objetivo pegar qualquer expressão na forma infixa " (2+3)*4 " e 
-transforma-lá na forma pós-fixa" 234*+ ", e após isso calcular seu valor. Esse trabalho também 
-pode ser utilizado ou modificado por qualquer pessoa.
+Esse trabalho tem como objetivo pegar qualquer expressão na forma infixa " (2+3)*4 " e transforma-lá na forma pós-fixa" 234*+ ", e após isso calcular seu valor. Esse trabalho também pode ser utilizado ou modificado por qualquer pessoa.
